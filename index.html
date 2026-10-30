@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+<title>Friseur Salon Studio 11 – Georgenschwaigstraße 1, München</title>
+<meta name="description" content="Friseur für Damen und Herren in Milbertshofen. Mit oder ohne Termin, Dienstag bis Samstag. Georgenschwaigstraße 1, 80807 München, Telefon 089 353 89 203.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Ruhig und fotogetrieben: helle Sandflächen (Hero, Bewertungen, Fuß) im Wechsel mit Creme. Kupfer aus dem Logo-Abzeichen als einziger Akzent. */
+:root {
+  --light: #F6F4F0;
+  --light-ink: #262421;
+  --light-soft: #6B655D;
+  --light-rule: #D8D2C8;
+  --head-bg: #FBFAF7;
+  --tone: #EDE6DB;
+  --tone-2: #E6DED1;
+  --tone-ink: #262421;
+  --tone-soft: #6B645B;
+  --tone-rule: rgba(38,36,33,.18);
+  --copper: #B9875E;
+  --copper-hover: #CB9B72;
+  --on-copper: #1B1A19;
+  --error-light: #A8261F;
+  --head-h: 4.5rem;
+  /* bewusst immer hell, auch bei dunkler Systemeinstellung */
+  color-scheme: light;
+  box-sizing: border-box;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--head-h) + 1rem); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--light); color: var(--light-ink); font-family: Jost, "Futura", "Century Gothic", sans-serif; font-weight: 400; font-size: 1.0625rem; line-height: 1.65; }
+a { color: inherit; text-underline-offset: .25em; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: 70rem; margin: 0 auto; padding-inline: max(20px, env(safe-area-inset-left, 0px)) max(20px, env(safe-area-inset-right, 0px)); }
+.tab { font-variant-numeric: tabular-nums; }
+.caps { text-transform: uppercase; letter-spacing: .14em; font-size: .8125rem; font-weight: 500; }
+h1, h2, h3 { font-weight: 300; line-height: 1.15; margin: 0; text-wrap: balance; }
+h1, h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; letter-spacing: .01em; font-variant-numeric: lining-nums; }
+h2 { font-size: clamp(2rem, 4vw, 2.875rem); }
+p { text-wrap: pretty; }
+.center { text-align: center; }
+.rule { width: 4.5rem; height: 1px; background: currentColor; border: 0; margin: 1.25rem auto 2.5rem; opacity: .45; }
+section { padding-block: 5rem; }
+
+/* warme Sandflächen statt Grau */
+.tone { background: var(--tone); color: var(--tone-ink); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .55rem 1.3rem; border-radius: 4px; font: inherit; font-weight: 500; font-size: .9375rem; letter-spacing: .04em; text-decoration: none; cursor: pointer; border: 1px solid var(--copper); background: var(--copper); color: var(--on-copper); white-space: nowrap; }
+.btn:hover { background: var(--copper-hover); border-color: var(--copper-hover); }
+.btn-ghost { background: transparent; color: inherit; border-color: currentColor; }
+.btn-ghost:hover { background: rgba(127,120,110,.14); border-color: currentColor; }
+
+/* Fester Kopf */
+.top { position: sticky; top: 0; z-index: 10; background: var(--head-bg); color: var(--tone-ink); border-bottom: 1px solid var(--light-rule); }
+.top .wrap { display: flex; align-items: center; gap: 2rem; min-height: var(--head-h); }
+.logo { display: block; flex: none; margin-right: auto; }
+.logo img { height: 46px; width: auto; }
+img.knockout:not(.ko-done) { background: #fff; border-radius: 3px; }
+.top nav { display: flex; gap: 1.75rem; }
+.top nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; font-size: .9375rem; color: var(--tone-ink); opacity: .85; }
+.top nav a:hover { opacity: 1; text-decoration: underline; }
+.top .actions-top { display: flex; gap: .5rem; }
+.btn .ico { width: 18px; height: 18px; flex: none; margin-right: .5rem; }
+.btn-call { background: transparent; color: var(--tone-ink); border-color: var(--tone-ink); }
+.btn-call:hover { background: var(--tone-ink); border-color: var(--tone-ink); color: var(--head-bg); }
+
+/* Hero: kompakt, geteilt */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: min(68vh, 36rem); padding: 0; }
+.hero-text { display: flex; flex-direction: column; justify-content: center; padding: 3rem 3.5rem 3rem max(20px, calc((100vw - 70rem) / 2 + 20px)); }
+.hero h1 { font-size: clamp(3rem, 6vw, 5rem); letter-spacing: .06em; text-transform: uppercase; line-height: 1; margin-bottom: 1rem; }
+.hero .lead { font-size: 1.25rem; font-weight: 300; max-width: 32ch; margin: 0 0 2rem; }
+.hero .lead strong { font-weight: 500; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.hero-photo { margin: 0; position: relative; min-height: 18rem; }
+.hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 38%; }
+.hero-photo img, .grid img, .salon-photos img { filter: saturate(.75) contrast(1.05) sepia(.08); }
+
+/* Info-Leiste unter dem Hero */
+.facts { border-bottom: 1px solid var(--light-rule); }
+.facts ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.facts li { padding: 1.4rem 0 1.4rem 1.5rem; border-left: 1px solid var(--light-rule); }
+.facts li:first-child { border-left: 0; padding-left: 0; }
+.facts .caps { display: block; color: var(--light-soft); font-size: .75rem; margin-bottom: .2rem; }
+
+/* Preise: Damen und Herren nebeneinander, Rest aufklappbar */
+.price-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 5rem; max-width: 60rem; margin: 0 auto; }
+.price-cols h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 1.75rem; margin-bottom: .15rem; }
+.price-cols .sub { color: var(--light-soft); font-size: .9375rem; margin: 0 0 1rem; }
+.plist { list-style: none; margin: 0; padding: 0; }
+.plist li { display: flex; align-items: baseline; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid var(--light-rule); font-weight: 300; }
+.plist li span:first-child { flex: 1; min-width: 0; }
+.plist li span:last-child { font-variant-numeric: tabular-nums; font-weight: 400; white-space: nowrap; }
+.more { max-width: 60rem; margin: 3rem auto 0; }
+.more h3 { margin-bottom: .75rem; }
+.acc details { border-top: 1px solid var(--light-rule); }
+.acc details:last-child { border-bottom: 1px solid var(--light-rule); }
+.acc summary { list-style: none; display: flex; align-items: center; gap: 1rem; min-height: 3.5rem; padding: .5rem 0; cursor: pointer; }
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary .t { flex: 1; }
+.acc summary .hint { color: var(--light-soft); font-size: .9375rem; }
+.acc summary .plus { position: relative; width: 14px; height: 14px; flex: none; }
+.acc summary .plus::before, .acc summary .plus::after { content: ""; position: absolute; left: 0; top: 6px; width: 14px; height: 1.5px; background: currentColor; transition: transform .25s ease; }
+.acc summary .plus::after { transform: rotate(90deg); }
+.acc details[open] .plus::after { transform: rotate(0deg); }
+.acc summary:hover .t { color: var(--copper); }
+.acc .body { padding: 0 0 1.5rem; }
+.ptable { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.ptable th, .ptable td { padding: .45rem 0; text-align: left; font-weight: 300; border-bottom: 1px solid var(--light-rule); vertical-align: baseline; }
+.ptable tr:last-child th, .ptable tr:last-child td { border-bottom: 0; }
+.ptable thead th { font-size: .8125rem; color: var(--light-soft); font-weight: 400; letter-spacing: .06em; }
+.ptable .p { text-align: right; padding-left: 1rem; white-space: nowrap; width: 1%; font-weight: 400; }
+.ptable tbody th span { display: block; font-size: .875rem; color: var(--light-soft); }
+
+/* Arbeiten */
+.work { padding-top: 0; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.grid figure { margin: 0; overflow: hidden; background: var(--light-rule); }
+.grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.grid figure:hover img { transform: scale(1.03); }
+@media (prefers-reduced-motion: reduce) { .grid img { transition: none; } .grid figure:hover img { transform: none; } }
+.work-foot { display: flex; justify-content: center; margin-top: 2rem; }
+
+/* Salon */
+.salon { }
+.salon-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 3rem 4rem; align-items: center; }
+.salon-text h2 { margin-bottom: 1.25rem; }
+.salon-text p { color: var(--light-soft); max-width: 36ch; }
+.salon-photos { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.salon-photos figure { margin: 0; }
+.salon-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.salon-photos .tall { grid-row: span 2; }
+.salon-photos .tall img { aspect-ratio: auto; height: 100%; }
+
+/* Bewertungen: Zahl, drei kurze Sätze, Einladung */
+.reviews { padding-block: 4.5rem; }
+.rev-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 2.5rem 4rem; align-items: center; }
+.score { order: 2; }
+.score .num { display: block; font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 3rem; line-height: 1; font-variant-numeric: lining-nums; }
+.score p { margin: .5rem 0 0; color: var(--tone-soft); }
+.score .ask { color: var(--tone-ink); margin: 1.5rem 0 1rem; }
+.lines { list-style: none; margin: 0; padding: 0; }
+.lines li { padding: 1rem 0; border-top: 1px dotted var(--tone-rule); }
+.lines li:last-child { border-bottom: 1px dotted var(--tone-rule); }
+.lines q { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.75rem; line-height: 1.3; quotes: "„" "“"; }
+.lines .who { display: block; font-size: .875rem; color: var(--tone-soft); margin-top: .2rem; }
+
+/* Kontakt + Fuß */
+.contact { padding-block: 4.5rem 2rem; background: var(--tone-2); }
+.contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; padding-bottom: 3.5rem; border-bottom: 1px dotted var(--tone-rule); }
+.contact h3 { margin-bottom: .9rem; color: var(--tone-soft); }
+.contact address { font-style: normal; font-weight: 300; }
+.contact p { margin: 0 0 .5rem; font-weight: 300; }
+.contact .big { font-size: 1.75rem; font-weight: 300; text-decoration: none; }
+.contact .big:hover { color: var(--copper-hover); }
+.contact .now { color: var(--tone-soft); margin-bottom: .75rem; }
+table.hours { border-collapse: collapse; width: 100%; max-width: 20rem; font-variant-numeric: tabular-nums; font-weight: 300; }
+table.hours td { padding: .3rem 0; border-bottom: 1px solid var(--tone-rule); }
+table.hours td + td { text-align: right; }
+table.hours tr.today td { font-weight: 500; }
+table.hours tr.today.closed td { font-weight: 300; }
+table.hours tr.closed td + td { color: var(--tone-soft); }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding-top: 1.5rem; font-size: .875rem; color: var(--tone-soft); }
+.foot img { height: 40px; width: auto; opacity: .75; }
+.foot nav { display: flex; gap: 1.5rem; }
+.foot nav a { display: inline-block; padding-block: .6rem; }
+
+/* Anfrage-Dialog */
+dialog#booking { width: min(32rem, calc(100% - 2rem)); max-height: calc(100% - 2rem); overflow: auto; padding: 1.75rem; border: 0; border-radius: 6px; background: var(--light); color: var(--light-ink); margin: auto; }
+dialog#booking::backdrop { background: rgba(20,19,18,.65); }
+.dlg-head { display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+.dlg-head h2 { font-size: 1.75rem; margin: 0 0 .5rem; }
+.dlg-close { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; font: inherit; font-size: 1.75rem; line-height: 1; background: none; border: 0; color: inherit; cursor: pointer; }
+.dlg-intro { margin: 0 0 1.25rem; color: var(--light-soft); }
+form.req { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+form.req .full { grid-column: 1 / -1; }
+form.req label { display: block; font-weight: 500; font-size: .9375rem; margin-bottom: .3rem; }
+form.req input, form.req select, form.req textarea { width: 100%; font: inherit; font-weight: 400; color: var(--light-ink); background: transparent; border: 1px solid var(--light-soft); border-radius: 4px; padding: .7rem .8rem; }
+form.req textarea { min-height: 5rem; resize: vertical; }
+form.req [aria-invalid="true"] { border: 2px solid var(--error-light); }
+form.req .err { color: var(--error-light); font-size: .9rem; margin-top: .25rem; min-height: 1.2em; }
+form.req .hint { font-size: .875rem; color: var(--light-soft); margin: .5rem 0 0; }
+.sent dl { margin: 0 0 1rem; display: grid; grid-template-columns: auto 1fr; gap: .3rem 1rem; }
+.sent dt { color: var(--light-soft); }
+.sent dd { margin: 0; }
+.sent .demo { font-size: .9rem; color: var(--light-soft); border-top: 1px solid var(--light-rule); padding-top: .75rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.dock { display: none; }
+
+@media (max-width: 960px) {
+  .top nav { display: none; }
+}
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .hero-photo { order: -1; min-height: 0; aspect-ratio: 16 / 10; max-height: 42vh; width: 100%; }
+  .hero-text { padding: 2rem 20px 2.5rem; }
+  .salon-grid, .contact-grid, .rev-grid { grid-template-columns: 1fr; }
+  .price-cols { grid-template-columns: 1fr; gap: 2.5rem; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+  section { padding-block: 3.5rem; }
+}
+@media (max-width: 560px) {
+  :root { --head-h: 4rem; }
+  body { padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px)); }
+  .logo img { height: 38px; }
+  .top .wrap { gap: 1rem; }
+  .top .actions-top .btn { padding-inline: .8rem; }
+  .top .actions-top .long { display: none; }
+  .hero .actions { display: none; }
+  .hero .lead { margin-bottom: 0; }
+  .price-cols > div:last-child { order: -1; }
+  .plist li { padding: .4rem 0; }
+  .more { margin-top: 1.5rem; }
+  .facts ul { grid-template-columns: 1fr; }
+  .facts li { padding: .8rem 0; border-left: 0; border-top: 1px solid var(--light-rule); }
+  .facts li:first-child { border-top: 0; }
+  form.req { grid-template-columns: 1fr; }
+  .dock { display: flex; position: fixed; inset: auto 0 0 0; z-index: 5; background: var(--head-bg); color: var(--tone-ink); border-top: 1px solid var(--tone-rule); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .dock a { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 3.5rem; text-decoration: none; font-weight: 500; letter-spacing: .04em; }
+  .dock a + a { border-left: 1px solid var(--tone-rule); }
+}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Friseur Salon Studio 11 Ahmetlic, zum Seitenanfang"><img class="knockout" src="img/logo.jpg" alt="Friseur Salon Studio 11 Ahmetlic" width="840" height="330"></a>
+    <nav aria-label="Seitenbereiche">
+      <a href="#preise">Preise</a>
+      <a href="#arbeiten">Arbeiten</a>
+      <a href="#salon">Salon</a>
+      <a href="#kontakt">Öffnungszeiten</a>
+    </nav>
+    <div class="actions-top">
+      <a class="btn btn-call" href="tel:+498935389203" aria-label="Anrufen: 089 353 89 203"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Anrufen</a>
+      <a class="btn" href="#kontakt" data-book>Termin<span class="long">&nbsp;buchen</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero tone" aria-labelledby="hero-h">
+    <div class="hero-text">
+      <h1 id="hero-h">Studio 11</h1>
+      <p class="lead">Friseur für Damen, Herren und Kinder in Milbertshofen.<br><strong>Herrenschnitt 11 € · auch ohne Termin.</strong></p>
+      <div class="actions">
+        <a class="btn" href="#kontakt" data-book>Termin buchen</a>
+        <a class="btn btn-ghost" href="tel:+498935389203">Anrufen</a>
+      </div>
+    </div>
+    <figure class="hero-photo"><img src="img/hero-karamell.jpg" alt="Lange Haare in Karamell mit großen, weichen Wellen, fotografiert im Salon" width="1440" height="1800" fetchpriority="high"></figure>
+  </section>
+
+  <div class="facts">
+    <div class="wrap"><ul>
+      <li><span class="caps">Öffnungszeiten</span>Di–Fr 9–18 Uhr · Sa 9–15 Uhr</li>
+      <li><span class="caps">Termin</span>Mit oder ohne Termin</li>
+      <li><span class="caps">Adresse</span>Georgenschwaigstraße 1, 80807 München</li>
+    </ul></div>
+  </div>
+
+  <section id="preise">
+    <div class="wrap">
+      <h2 class="center">Preise</h2>
+      <hr class="rule">
+      <div class="price-cols">
+        <div>
+          <h3>Damen</h3>
+          <p class="sub">je nach Haarlänge, kurz bis lang</p>
+          <ul class="plist">
+            <li><span>Waschen, Schneiden</span><span>16–18 €</span></li>
+            <li><span>Waschen, Schneiden, Föhnen</span><span>25–33 €</span></li>
+            <li><span>Waschen, Föhnen oder Legen</span><span>17–23 €</span></li>
+            <li><span>Färben</span><span>26–36 €</span></li>
+            <li><span>Ansatz färben</span><span>21–27 €</span></li>
+            <li><span>Tönung</span><span>22–30 €</span></li>
+            <li><span>Dauerwelle</span><span>35–45 €</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Herren &amp; Kinder</h3>
+          <p class="sub">mit oder ohne Termin</p>
+          <ul class="plist">
+            <li><span>Schneiden</span><span>11 €</span></li>
+            <li><span>Waschen, Schneiden, Föhnen</span><span>14 €</span></li>
+            <li><span>Maschinenschnitt</span><span>9 €</span></li>
+            <li><span>Kinder</span><span>9 €</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="more acc">
+        <h3 class="caps">Weitere Leistungen</h3>
+        <details>
+          <summary><span class="t">Strähnen</span><span class="hint tab">17–48 €</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="body">
+            <table class="ptable">
+              <thead><tr><th scope="col"><span class="visually-hidden">Leistung</span></th><th scope="col" class="p">Kurz</th><th scope="col" class="p">Mittel</th><th scope="col" class="p">Lang</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Foliensträhnen, ganzer Kopf</th><td class="p">33 €</td><td class="p">42 €</td><td class="p">48 €</td></tr>
+                <tr><th scope="row">Foliensträhnen, Oberkopf</th><td class="p">27 €</td><td class="p">37 €</td><td class="p">39 €</td></tr>
+                <tr><th scope="row">Foliensträhnen, bis 10 Folien</th><td class="p">17 €</td><td class="p">20 €</td><td class="p">23 €</td></tr>
+                <tr><th scope="row">Haubensträhnen</th><td class="p" colspan="3">28 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary><span class="t">Pakete mit Waschen, Schneiden, Föhnen und Haarkur</span><span class="hint tab">44–105 €</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="body">
+            <table class="ptable">
+              <thead><tr><th scope="col"><span class="visually-hidden">Paket</span></th><th scope="col" class="p">Kurz</th><th scope="col" class="p">Mittel</th><th scope="col" class="p">Lang</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Färben</th><td class="p">44 €</td><td class="p">54 €</td><td class="p">62 €</td></tr>
+                <tr><th scope="row">Dauerwelle</th><td class="p">55 €</td><td class="p">62 €</td><td class="p">70 €</td></tr>
+                <tr><th scope="row">Strähnen</th><td class="p">75 €</td><td class="p">90 €</td><td class="p">105 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details>
+          <summary><span class="t">Wimpern, Augenbrauen und Pflege</span><span class="hint tab">2–7 €</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="body">
+            <table class="ptable"><tbody>
+              <tr><th scope="row">Wimpern färben</th><td class="p">7 €</td></tr>
+              <tr><th scope="row">Augenbrauen färben</th><td class="p">7 €</td></tr>
+              <tr><th scope="row">Augenbrauen zupfen</th><td class="p">7 €</td></tr>
+              <tr><th scope="row">Haarkur</th><td class="p">5 €</td></tr>
+              <tr><th scope="row">Spülung</th><td class="p">2 €</td></tr>
+            </tbody></table>
+          </div>
+        </details>
+        <details>
+          <summary><span class="t">Damen-Preise nach Haarlänge</span><span class="hint tab">16–45 €</span><span class="plus" aria-hidden="true"></span></summary>
+          <div class="body">
+            <table class="ptable">
+              <thead><tr><th scope="col"><span class="visually-hidden">Leistung</span></th><th scope="col" class="p">Kurz</th><th scope="col" class="p">Mittel</th><th scope="col" class="p">Lang</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Waschen, Schneiden</th><td class="p">16 €</td><td class="p">18 €</td><td class="p">18 €</td></tr>
+                <tr><th scope="row">Waschen, Föhnen oder Legen</th><td class="p">17 €</td><td class="p">20 €</td><td class="p">23 €</td></tr>
+                <tr><th scope="row">Waschen, Schneiden, Föhnen</th><td class="p">25 €</td><td class="p">28 €</td><td class="p">33 €</td></tr>
+                <tr><th scope="row">Ansatz färben</th><td class="p">21 €</td><td class="p">25 €</td><td class="p">27 €</td></tr>
+                <tr><th scope="row">Färben</th><td class="p">26 €</td><td class="p">32 €</td><td class="p">36 €</td></tr>
+                <tr><th scope="row">Tönung</th><td class="p">22 €</td><td class="p">26 €</td><td class="p">30 €</td></tr>
+                <tr><th scope="row">Dauerwelle</th><td class="p">35 €</td><td class="p">40 €</td><td class="p">45 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="arbeiten" aria-labelledby="arbeiten-h">
+    <div class="wrap">
+      <h2 class="center" id="arbeiten-h">Arbeiten</h2>
+      <hr class="rule">
+      <div class="grid">
+        <figure><img src="img/blond-bob.jpg" alt="Hellblonder, gestufter Bob" width="800" height="1000" loading="lazy"></figure>
+        <figure><img src="img/rot.jpg" alt="Lange Haare in kräftigem Rot mit Stufen" width="800" height="1000" loading="lazy"></figure>
+        <figure><img src="img/lang-blond.jpg" alt="Lange, glatte blonde Haare" width="800" height="1000" loading="lazy"></figure>
+        <figure><img src="img/braun-wellen.jpg" alt="Braune Haare mit Volumen und weichen Wellen" width="800" height="1000" loading="lazy"></figure>
+        <figure><img src="img/karamell-wellen.jpg" alt="Lange Haare, karamellfarben mit großen Wellen" width="800" height="1000" loading="lazy"></figure>
+        <figure><img src="img/braun-lang.jpg" alt="Lange braune Haare mit Stufen" width="800" height="1000" loading="lazy"></figure>
+      </div>
+      <div class="work-foot"><a class="caps" href="https://www.instagram.com/friseur.studio11/" target="_blank" rel="noopener">Mehr auf Instagram</a></div>
+    </div>
+  </section>
+
+  <section class="reviews tone" aria-labelledby="rev-h">
+    <div class="wrap rev-grid">
+      <div class="score">
+        <h2 id="rev-h" class="visually-hidden">Bewertungen</h2>
+        <span class="num">4,3</span>
+        <p>von 5 Sternen bei 61 Bewertungen auf Google.</p>
+        <p class="ask">Zufrieden mit Ihrer Frisur? Wir freuen uns über ein paar Worte.</p>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Friseur%20Salon%20Studio%2011%20Georgenschwaigstra%C3%9Fe%201%20M%C3%BCnchen" target="_blank" rel="noopener">Auf Google bewerten</a>
+      </div>
+      <ul class="lines">
+        <li><q>Man bekommt immer relativ kurzfristig einen Termin.</q><span class="who">Christoph S.</span></li>
+        <li><q>Super Beratung und nette Mitarbeiter.</q><span class="who">Varisa H.</span></li>
+        <li><q>Ich spreche kein Deutsch, aber sie waren total lieb.</q><span class="who">Josefina C.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="salon" id="salon">
+    <div class="wrap salon-grid">
+      <div class="salon-text">
+        <h2>Der Salon</h2>
+        <p>Das gelbe Haus mit dem roten Schild, direkt an der Georgenschwaigstraße. Drinnen hell, mit großen Spiegeln und eigenem Waschplatz.</p>
+        <p>Viele unserer Kundinnen und Kunden kommen spontan vorbei. Wer lieber planen möchte, bucht vorher einen Termin.</p>
+      </div>
+      <div class="salon-photos">
+        <figure class="tall"><img src="img/schaufenster.jpg" alt="Kundin mit glatten, rotblonden Haaren vor dem Schaufenster des Salons an der gelben Hauswand" width="1050" height="1400" loading="lazy"></figure>
+        <figure><img src="img/fassade.jpg" alt="Gelbe Fassade mit dem Schild Friseur Salon, Damen und Herren" width="408" height="306" loading="lazy"></figure>
+        <figure><img src="img/salon-innen.jpg" alt="Innenraum des Salons mit Frisierplätzen, Spiegeln und Waschplätzen" width="408" height="306" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact tone" id="kontakt">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <h3 class="caps">Öffnungszeiten</h3>
+        <p class="now" id="now">Dienstag bis Samstag</p>
+        <table class="hours" id="hours">
+          <tbody>
+            <tr data-day="1"><td>Montag</td><td>geschlossen</td></tr>
+            <tr data-day="2"><td>Dienstag</td><td>9–18 Uhr</td></tr>
+            <tr data-day="3"><td>Mittwoch</td><td>9–18 Uhr</td></tr>
+            <tr data-day="4"><td>Donnerstag</td><td>9–18 Uhr</td></tr>
+            <tr data-day="5"><td>Freitag</td><td>9–18 Uhr</td></tr>
+            <tr data-day="6"><td>Samstag</td><td>9–15 Uhr</td></tr>
+            <tr data-day="0"><td>Sonntag</td><td>geschlossen</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 class="caps">Adresse</h3>
+        <address>Friseur Salon Studio 11<br>Georgenschwaigstraße 1<br>80807 München</address>
+        <p style="margin-top:.75rem"><a href="https://www.google.com/maps/search/?api=1&query=Georgenschwaigstra%C3%9Fe%201%2080807%20M%C3%BCnchen" target="_blank" rel="noopener">Route in Google Maps</a></p>
+      </div>
+      <div>
+        <h3 class="caps">Termin</h3>
+        <p><a class="big tab" href="tel:+498935389203">089 353 89 203</a></p>
+        <p>Oder online anfragen, wir rufen zurück.</p>
+        <p style="margin-top:1rem"><button class="btn" type="button" data-book>Termin buchen</button></p>
+      </div>
+    </div>
+    <div class="foot">
+      <img class="knockout" src="img/logo.jpg" alt="" width="840" height="330">
+      <nav><a href="https://www.instagram.com/friseur.studio11/" target="_blank" rel="noopener">Instagram</a><a href="#">Impressum</a><a href="#">Datenschutz</a></nav>
+    </div>
+  </div>
+</footer>
+
+<div class="dock">
+  <a href="#preise">Preise</a>
+  <a href="#kontakt">Zeiten</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Georgenschwaigstra%C3%9Fe%201%2080807%20M%C3%BCnchen" target="_blank" rel="noopener">Route</a>
+</div>
+
+<dialog id="booking" aria-labelledby="booking-title">
+  <div class="dlg-head">
+    <h2 id="booking-title">Termin buchen</h2>
+    <button class="dlg-close" type="button" id="booking-close" aria-label="Schließen">×</button>
+  </div>
+  <p class="dlg-intro">Wunschtermin schicken, wir rufen zurück und machen ihn fest.</p>
+  <form class="req" id="reqform" novalidate>
+    <div class="full"><label for="f-name">Name</label><input id="f-name" aria-describedby="e-name" name="name" type="text" autocomplete="name" required><div class="err" id="e-name" aria-live="polite"></div></div>
+    <div class="full"><label for="f-tel">Telefon</label><input id="f-tel" aria-describedby="e-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required><div class="err" id="e-tel" aria-live="polite"></div></div>
+    <div><label for="f-service">Was soll gemacht werden?</label>
+      <select id="f-service" name="service">
+        <option>Herrenschnitt</option>
+        <option>Damen: Schneiden</option>
+        <option>Färben oder Tönung</option>
+        <option>Strähnen</option>
+        <option>Dauerwelle</option>
+        <option>Kinderhaarschnitt</option>
+        <option>Weiß ich noch nicht</option>
+      </select></div>
+    <div><label for="f-time">Uhrzeit</label>
+      <select id="f-time" name="time">
+        <option>Egal</option>
+        <option>Vormittags</option>
+        <option>Mittags</option>
+        <option>Nachmittags</option>
+      </select></div>
+    <div class="full"><label for="f-date">Wunschtag</label><p class="hint" id="h-date" style="margin:0 0 .4rem">Dienstag bis Samstag. Sonntag und Montag ist zu.</p><input id="f-date" aria-describedby="h-date e-date" name="date" type="date" required><div class="err" id="e-date" aria-live="polite"></div></div>
+    <div class="full"><label for="f-msg">Nachricht (optional)</label><textarea id="f-msg" name="msg"></textarea></div>
+    <div class="full"><button class="btn" type="submit">Anfrage senden</button><p class="hint">Wir nutzen Ihre Angaben nur, um Sie wegen des Termins anzurufen.</p></div>
+  </form>
+  <div class="sent" id="sent" hidden>
+    <dl id="sent-sum"></dl>
+    <p class="demo">Vorschau: In diesem Entwurf wird nichts verschickt. Auf der fertigen Seite geht die Anfrage per E-Mail an den Salon.</p>
+    <button class="btn" type="button" id="again">Schließen</button>
+  </div>
+</dialog>
+
+<script>
+// Logo liegt nur als JPEG mit weißem Grund vor: Weiß ausstanzen (im Dunkelmodus hell einfärben).
+document.querySelectorAll("img.knockout").forEach(function (img) {
+  function run() {
+    try {
+      var c = document.createElement("canvas");
+      c.width = img.naturalWidth; c.height = img.naturalHeight;
+      var ctx = c.getContext("2d");
+      ctx.drawImage(img, 0, 0);
+      var data = ctx.getImageData(0, 0, c.width, c.height), px = data.data;
+      var dark = getComputedStyle(document.documentElement).colorScheme === "dark";
+      for (var i = 0; i < px.length; i += 4) {
+        var lum = 0.299 * px[i] + 0.587 * px[i + 1] + 0.114 * px[i + 2];
+        var a = Math.max(0, Math.min(1, (255 - lum) * 1.4 / 255));
+        px[i + 3] = a * 255;
+        if (dark) { px[i] = 236; px[i + 1] = 231; px[i + 2] = 223; continue; }
+        // Weiß herausrechnen, damit die Originalfarben (Navy, Taupe) bleiben
+        for (var k = 0; k < 3; k++) px[i + k] = a > 0.02 ? Math.max(0, Math.min(255, (px[i + k] - (1 - a) * 255) / a)) : 0;
+      }
+      ctx.putImageData(data, 0, 0);
+      img.src = c.toDataURL("image/png");
+      img.classList.add("ko-done");
+    } catch (e) {}
+  }
+  if (img.complete && img.naturalWidth) run(); else img.addEventListener("load", run, { once: true });
+});
+
+function berlinNow() {
+  var p = {};
+  new Intl.DateTimeFormat("en-US", { timeZone: "Europe/Berlin", weekday: "short", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" })
+    .formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
+  return {
+    day: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(p.weekday),
+    hour: Number(p.hour) + Number(p.minute) / 60,
+    iso: p.year + "-" + p.month + "-" + p.day
+  };
+}
+
+(function () {
+  var hours = { 0: null, 1: null, 2: [9, 18], 3: [9, 18], 4: [9, 18], 5: [9, 18], 6: [9, 15] };
+  var names = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+  var now = berlinNow(), d = now.day, h = now.hour;
+  document.querySelectorAll("#hours tr").forEach(function (tr) {
+    var day = Number(tr.dataset.day);
+    if (!hours[day]) tr.classList.add("closed");
+    if (day === d) tr.classList.add("today");
+  });
+  var msg, today = hours[d];
+  if (today && h >= today[0] && h < today[1]) msg = "Jetzt geöffnet, heute bis " + today[1] + " Uhr";
+  else if (today && h < today[0]) msg = "Heute ab " + today[0] + " Uhr geöffnet";
+  else {
+    for (var i = 1; i <= 7; i++) {
+      var next = (d + i) % 7;
+      if (hours[next]) { msg = "Gerade geschlossen. Wieder geöffnet " + (i === 1 ? "morgen" : "am " + names[next]) + " ab " + hours[next][0] + " Uhr"; break; }
+    }
+  }
+  document.getElementById("now").textContent = msg;
+})();
+
+(function () {
+  var dlg = document.getElementById("booking");
+  var form = document.getElementById("reqform");
+  var sent = document.getElementById("sent");
+  var iso = berlinNow().iso;
+  var opener = null;
+  document.getElementById("f-date").min = iso;
+
+  function err(id, msg) {
+    document.getElementById("e-" + id).textContent = msg;
+    var input = document.getElementById("f-" + id);
+    if (msg) input.setAttribute("aria-invalid", "true"); else input.removeAttribute("aria-invalid");
+    return !msg;
+  }
+  function reset() {
+    form.reset(); form.hidden = false; sent.hidden = true;
+    ["name", "tel", "date"].forEach(function (k) { err(k, ""); });
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = form.name.value.trim(), tel = form.tel.value.trim(), d = form.date.value;
+    var ok = err("name", name ? "" : "Bitte Ihren Namen angeben.");
+    ok = err("tel", /\d{6,}/.test(tel.replace(/[\s\/\-+()]/g, "")) ? "" : "Bitte eine Telefonnummer angeben, unter der wir Sie erreichen.") && ok;
+    var msg = "";
+    if (!d) msg = "Bitte einen Tag wählen.";
+    else if (d < iso) msg = "Dieser Tag liegt in der Vergangenheit.";
+    else { var wd = new Date(d + "T12:00:00").getDay(); if (wd === 0 || wd === 1) msg = "Sonntag und Montag ist zu. Bitte Dienstag bis Samstag wählen."; }
+    ok = err("date", msg) && ok;
+    if (!ok) { form.querySelector("[aria-invalid=\"true\"]").focus(); return; }
+    var sum = document.getElementById("sent-sum");
+    sum.innerHTML = "";
+    var rows = [["Name", name], ["Telefon", tel], ["Leistung", form.service.value], ["Wunschtag", new Date(d + "T12:00:00").toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" })], ["Uhrzeit", form.time.value]];
+    if (form.msg.value.trim()) rows.push(["Nachricht", form.msg.value.trim()]);
+    rows.forEach(function (r) {
+      var dt = document.createElement("dt"), dd = document.createElement("dd");
+      dt.textContent = r[0]; dd.textContent = r[1]; sum.appendChild(dt); sum.appendChild(dd);
+    });
+    form.hidden = true; sent.hidden = false;
+    document.getElementById("again").focus();
+  });
+
+  function openDlg(e) {
+    e.preventDefault();
+    opener = e.currentTarget;
+    if (dlg.showModal) { if (!dlg.open) dlg.showModal(); } else dlg.setAttribute("open", "");
+    document.getElementById("f-name").focus();
+  }
+  function closeDlg() { if (dlg.close) dlg.close(); else { dlg.removeAttribute("open"); reset(); } }
+  document.querySelectorAll("[data-book]").forEach(function (b) { b.addEventListener("click", openDlg); });
+  document.getElementById("booking-close").addEventListener("click", closeDlg);
+  document.getElementById("again").addEventListener("click", closeDlg);
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) closeDlg(); });
+  dlg.addEventListener("close", function () { reset(); if (opener && opener.focus) opener.focus(); });
+})();
+</script>
+
+</body>
+</html>
